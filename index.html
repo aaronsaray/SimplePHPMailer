@@ -46,7 +46,45 @@
 <h3>
 <a id="configuration-options" class="anchor" href="#configuration-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration Options</h3>
 
-<p>todo...</p>
+<p>For this script, you basically have to make three decisions: What is the from email address, what email address should responses be sent to, and what page should be loaded after the page is successful.  This configuration is done in the top part of the script.</p>
+
+<h4>
+<a id="how-to-edit-php-code" class="anchor" href="#how-to-edit-php-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to edit PHP Code</h4>
+
+<p>You can use your favorite text editor to edit the PHP code.  This might be the same tool you create HTML in.  Then, when asked to change a particular value, enter the new value between the double quotes.</p>
+
+<p>For example, if the value is <code>"my@address.com"</code> and you want to change it to your email address, you should change it to look like this <code>"me@myaddress.com"</code> - do not remove the quotes, add additional quotes or change any other part of the line.  If you end up receiving some sort of error that seems like it's from PHP that is in bold and begins with <strong>T_</strong>, chances are there is a missing or extra quote.</p>
+
+<h4>
+<a id="to-email" class="anchor" href="#to-email" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To Email</h4>
+
+<p>Find the section towards the top of the script that says "To" email address.  You'll see this line:</p>
+
+<pre><code>define('AaronSaray\SimplePHPMailer\TO_EMAIL', "to@address.com");
+</code></pre>
+
+<p>You need to change this so that it has your email address in there.  So, for example, let's say you're email is <em><a href="mailto:john@smith.com">john@smith.com</a></em>, that line should now say:</p>
+
+<pre><code>define('AaronSaray\SimplePHPMailer\TO_EMAIL', "john@smith.com");
+</code></pre>
+
+<h4>
+<a id="from-email" class="anchor" href="#from-email" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>From Email</h4>
+
+<p>Following the same pattern of updating the PHP code as was done with the "to" address, change the "from" address.  This is who the email from the website will look like it's from.</p>
+
+<h4>
+<a id="subject-line" class="anchor" href="#subject-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subject Line</h4>
+
+<p>This is the subject line that your email will have.  It is fine to leave it as it is.  However, you may want to add the name of the site in the message instead.  For example:</p>
+
+<pre><code>define('AaronSaray\SimplePHPMailer\SUBJECT', "Form submitted from aarons-cool-site.com");
+</code></pre>
+
+<h4>
+<a id="success-url" class="anchor" href="#success-url" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Success URL</h4>
+
+<p>When the form has been successfully submitted and the email has been sent, this is the URL that the visitor will be sent to.  You should probably point it to a success page on your website with a thank you message.  Let the visitor know that their email has been sent.</p>
 
 <h3>
 <a id="what-html-is-required" class="anchor" href="#what-html-is-required" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What HTML is Required</h3>
@@ -73,6 +111,11 @@
 </code></pre>
 
 <p>Now, any named HTML elements inside of this form will be sent to the spmailer.php script and sent directly to the recipient address in the script. Yay!</p>
+
+<h3>
+<a id="errors-and-validation" class="anchor" href="#errors-and-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Errors and Validation</h3>
+
+<p>The script does some error checking and validation to make sure messages contain valid information.  You should also program client-side validation for your required and specific fields as well.  If you require a more robust form of error checking, this script may not be for you.</p>
         </section>
 
         <aside id="sidebar">
