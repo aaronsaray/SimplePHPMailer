@@ -34,6 +34,11 @@
 <p>SimplePHPMailer is a simple drop-in script that helps you send email messages from your contact form.  You do not need to know PHP in order to use this - as all the configuration and instructions are right in the script.  You'll then choose a page to redirect to after submission.  <em>Just need a simple, drop-in solution?</em>  This is your script.</p>
 
 <h3>
+<a id="what-happens" class="anchor" href="#what-happens" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What happens?</h3>
+
+<p>Basically, it's very simple and dynamic.  First, place the spmailer.php file in your project and configure.  Second, create a form with any number of inputs.  Third, start getting emails with those fields! </p>
+
+<h3>
 <a id="how-to-get-started" class="anchor" href="#how-to-get-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to get started</h3>
 
 <p>The first step is to download the spmailer.php file and put it in your project.  Click the link on the right to download your chosen type. If you're not sure which one you want, you probably want the .zip file.  Next, place the php file in your project in the folder by your contact form html.  Finally, open the file with the same tool you've been using to edit your HTML.  You'll see configuration options that you can change here.  These options should be pretty self-explanatory - but never fear!  Below, you'll find more instructions.</p>
@@ -45,6 +50,29 @@
 
 <h3>
 <a id="what-html-is-required" class="anchor" href="#what-html-is-required" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What HTML is Required</h3>
+
+<p>Simply make an HTML form, using the method of post, with the action pointed to the <code>spmailer.php</code> file.  If you have placed the spmailer.php file in the same directory or folder as your contact form's HTML page, this will be easy.</p>
+
+<p>For example, imagine you have the following folder structure:</p>
+
+<pre><code>mysite.com/
+ |
+ -- index.html
+ -- contact.html
+ -- spmailer.php
+</code></pre>
+
+<p>Then, your form inside of <strong>contact.html</strong> will look like this:</p>
+
+<pre><code>&lt;form method="POST" action="spmailer.php"&gt;
+    &lt;div&gt;&lt;label&gt;Name: &lt;input type="text" name="full_name" required&gt;&lt;/label&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;label&gt;Email: &lt;input type="email" name="email" required&gt;&lt;/label&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;label&gt;Message:&lt;br&gt;&lt;textarea name="message" required&gt;&lt;/label&gt;&lt;/div&gt;
+    &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Now, any named HTML elements inside of this form will be sent to the spmailer.php script and sent directly to the recipient address in the script. Yay!</p>
         </section>
 
         <aside id="sidebar">
